@@ -261,6 +261,13 @@ function cleanString(string) {
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {
+// Solution #1
+function capitalize(string) {
+    const words = [];
 
+    for (let word of string.split(' ')) {
+        words.push(word[0].toUpperCase() + word.slice(1));
+    };
+
+    return words.join(' ')
 };

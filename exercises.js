@@ -207,6 +207,32 @@ function chunk(array, size) {
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+// Solution #1
 function anagrams(stringA, stringB) {
+    const aCharacterMap = buildCharacterMap(stringA);
+    const bCharacterMap = buildCharacterMap(stringB);
+    
+    // Object.keys returns an array of keys of object
+    if (Object.keys(aCharacterMap).length !== Object.keys(bCharacterMap).length) {
+        return false
+    };
+    
+    for (let key in aCharacterMap) {
+        if (aCharacterMap[key] !== bCharacterMap[key]) {
+            return false
+        };
+    };
 
+    return true
+};
+
+// helper function to build a character map
+function buildCharacterMap(string) {
+    const characterMap = {};
+
+    for (let character of string.replace(/[^\w]/g, '').toLowerCase()) {
+        characterMap[character] = characterMap[character] + 1 || 1;
+    };
+
+    return characterMap
 };

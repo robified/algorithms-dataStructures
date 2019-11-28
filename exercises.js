@@ -262,12 +262,27 @@ function cleanString(string) {
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 // Solution #1
+// function capitalize(string) {
+//     const words = [];
+
+//     for (let word of string.split(' ')) {
+//         words.push(word[0].toUpperCase() + word.slice(1));
+//     };
+
+//     return words.join(' ')
+// };
+
+// Solution #2
 function capitalize(string) {
-    const words = [];
-
-    for (let word of string.split(' ')) {
-        words.push(word[0].toUpperCase() + word.slice(1));
+    let result = string[0].toUpperCase();
+    
+    for (let i = 1; i < string.length; i++) {
+        if (string[i - 1] === ' ') {
+            result += string[i].toUpperCase();
+        } else {
+            result += string[i];
+        };        
     };
-
-    return words.join(' ')
+        
+    return result;
 };

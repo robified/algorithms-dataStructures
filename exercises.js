@@ -154,32 +154,32 @@ function fizzBuzz(number) {
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 // Solution #1
-// function chunk(array, size) {
-//     const chunked = [];
+function chunk(array, size) {
+    const chunked = [];
 
-//     for (let element of array) {
-//         let lastElement = chunked[chunked.length - 1];
+    for (let element of array) {
+        let lastElement = chunked[chunked.length - 1];
 
-//         if (!lastElement || lastElement.length === size) {
-//             chunked.push([element]);
-//         } else {
-//             lastElement.push(element);
-//         };
-//     };
+        if (!lastElement || lastElement.length === size) {
+            chunked.push([element]);
+        } else {
+            lastElement.push(element);
+        };
+    };
 
-//     return chunked
-// };
+    return chunked
+};
 
 // // Solution #2
-// function chunk(array, size) {
-//     const chunked = [];
+function chunk(array, size) {
+    const chunked = [];
         
-//     for (let index = 0; index < array.length; index += size) {
-//         chunked.push(array.slice(index, index + size));
-//     };
+    for (let index = 0; index < array.length; index += size) {
+        chunked.push(array.slice(index, index + size));
+    };
     
-//     return chunked
-// };
+    return chunked
+};
 
 // Solution #3
 function chunk(array, size) {
@@ -188,6 +188,25 @@ function chunk(array, size) {
     while (array.length > 0) {
         chunked.push(array.splice(0, size));
     };
-    
+
     return chunked
+};
+
+
+
+
+
+// Anagrams
+// --- Directions
+// Check to see if two provided strings are anagrams of eachother.
+// One string is an anagram of another if it uses the same characters
+// in the same quantity. Only consider characters, not spaces
+// or punctuation.  Consider capital letters to be the same as lower case
+// --- Examples
+//   anagrams('rail safety', 'fairy tales') --> True
+//   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
+//   anagrams('Hi there', 'Bye there') --> False
+
+function anagrams(stringA, stringB) {
+
 };

@@ -67,6 +67,8 @@ function palindrome(string) {
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {
+function reverseInt(number) {
+    let reversedInteger = number.toString().split('').reverse().join('');
 
+    return parseInt(reversedInteger) * Math.sign(number)
 };

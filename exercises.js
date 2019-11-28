@@ -171,11 +171,22 @@ function fizzBuzz(number) {
 // };
 
 // // Solution #2
+// function chunk(array, size) {
+//     const chunked = [];
+        
+//     for (let index = 0; index < array.length; index += size) {
+//         chunked.push(array.slice(index, index + size));
+//     };
+    
+//     return chunked
+// };
+
+// Solution #3
 function chunk(array, size) {
     const chunked = [];
-        
-    for (let index = 0; index < array.length; index += size) {
-        chunked.push(array.slice(index, index + size));
+
+    while (array.length > 0) {
+        chunked.push(array.splice(0, size));
     };
     
     return chunked

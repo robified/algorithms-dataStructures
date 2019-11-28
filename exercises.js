@@ -208,34 +208,34 @@ function chunk(array, size) {
 //   anagrams('Hi there', 'Bye there') --> False
 
 // Solution #1
-// function anagrams(stringA, stringB) {
-//     const aCharacterMap = buildCharacterMap(stringA);
-//     const bCharacterMap = buildCharacterMap(stringB);
+function anagrams(stringA, stringB) {
+    const aCharacterMap = buildCharacterMap(stringA);
+    const bCharacterMap = buildCharacterMap(stringB);
     
-//     // Object.keys returns an array of keys of object
-//     if (Object.keys(aCharacterMap).length !== Object.keys(bCharacterMap).length) {
-//         return false
-//     };
+    // Object.keys returns an array of keys of object
+    if (Object.keys(aCharacterMap).length !== Object.keys(bCharacterMap).length) {
+        return false
+    };
     
-//     for (let key in aCharacterMap) {
-//         if (aCharacterMap[key] !== bCharacterMap[key]) {
-//             return false
-//         };
-//     };
+    for (let key in aCharacterMap) {
+        if (aCharacterMap[key] !== bCharacterMap[key]) {
+            return false
+        };
+    };
 
-//     return true
-// };
+    return true
+};
 
-// // helper function to build a character map
-// function buildCharacterMap(string) {
-//     const characterMap = {};
+// helper function to build a character map
+function buildCharacterMap(string) {
+    const characterMap = {};
 
-//     for (let character of string.replace(/[^\w]/g, '').toLowerCase()) {
-//         characterMap[character] = characterMap[character] + 1 || 1;
-//     };
+    for (let character of string.replace(/[^\w]/g, '').toLowerCase()) {
+        characterMap[character] = characterMap[character] + 1 || 1;
+    };
 
-//     return characterMap
-// };
+    return characterMap
+};
 
 // Solution #2
 function anagrams(stringA, stringB) {
@@ -245,4 +245,22 @@ function anagrams(stringA, stringB) {
 // helper function to clean up string and remove spaces & punctuations
 function cleanString(string) {
     return string.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('')
+};
+
+
+
+
+
+// Sentence Capitalization
+// --- Directions
+// Write a function that accepts a string.  The function should
+// capitalize the first letter of each word in the string then
+// return the capitalized string.
+// --- Examples
+//   capitalize('a short sentence') --> 'A Short Sentence'
+//   capitalize('a lazy fox') --> 'A Lazy Fox'
+//   capitalize('look, it is working!') --> 'Look, It Is Working!'
+
+function capitalize(str) {
+
 };

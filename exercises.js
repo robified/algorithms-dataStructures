@@ -13,12 +13,17 @@
 // };
 
 // Solution #2
+// function reverse(string) {
+//     let reversed = '';
+
+//     for (let character of string) {
+//         reversed = character + reversed;
+//     };
+
+//     return reversed
+// };
+
+// Solution #3
 function reverse(string) {
-    let reversed = '';
-
-    for (let character of string) {
-        reversed = character + reversed;
-    };
-
-    return reversed
+    return string.split('').reduce((reversed, character) => character + reversed, '')
 };

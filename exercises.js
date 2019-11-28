@@ -43,6 +43,11 @@
 //   palindrome("abcdefg") === false
 
 // Solution #1
+// function palindrome(string) {
+//     return string === string.split('').reverse().join('')
+// };
+
+// Solution #2
 function palindrome(string) {
-    return string === string.split('').reverse().join('')
+    return string.split('').every((value, index) => value === string[string.length - index - 1])
 };

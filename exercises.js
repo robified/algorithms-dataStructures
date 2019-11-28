@@ -153,6 +153,19 @@ function fizzBuzz(number) {
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
+// Solution #1
 function chunk(array, size) {
+    const chunked = [];
 
+    for (let element of array) {
+        let lastElement = chunked[chunked.length - 1];
+
+        if (!lastElement || lastElement.length === size) {
+            chunked.push([element]);
+        } else {
+            lastElement.push(element);
+        };
+    };
+
+    return chunked
 };

@@ -312,17 +312,55 @@ function capitalize(string) {
 //       '####'
 
 // Solution #1
-function steps(number) {
-    for (let row = 0; row < (number); row++) {
-        let stair = '';
+// function steps(number) {
+//     for (let row = 0; row < (number); row++) {
+//         let stair = '';
 
-        for (let column = 0; column < (number); column++) {
-            if (column <= row) {
-                stair += '#';
-            } else {
-                stair += ' ';
-            };
-        };
-        console.log(`'${stair}'`);    
+//         for (let column = 0; column < (number); column++) {
+//             if (column <= row) {
+//                 stair += '#';
+//             } else {
+//                 stair += ' ';
+//             };
+//         };
+//         console.log(`'${stair}'`);    
+//     };
+// };
+
+// Recursive tips
+// function printNumber(number, decrement = 1) {
+//     if (number === 0) {
+//         return;
+//     };
+
+//     console.log(number);
+
+//     printNumber(number - decrement);
+// };
+
+// printNumber(10);
+
+// Solution #2
+function steps(number, row = 0, stair = '') {
+    // define the base case
+    if (number === row) {
+        return;
     };
+
+    if (number === stair.length) {
+        console.log(stair);
+        return steps(number, row + 1);
+    };
+
+    if (stair.length <= row) {
+        stair += '#'; 
+    } else {
+        stair += ' ';
+    };
+
+    steps(number, row, stair);
+    
+    // ternary expression way
+    // const add = stair.length <= row ? '#' : ' ';
+    // steps(number, row, stair + add);
 };

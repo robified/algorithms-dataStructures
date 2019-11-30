@@ -312,20 +312,20 @@ function capitalize(string) {
 //       '####'
 
 // Solution #1
-// function steps(number) {
-//     for (let row = 0; row < (number); row++) {
-//         let stair = '';
+function steps(number) {
+    for (let row = 0; row < number; row++) {
+        let stair = '';
 
-//         for (let column = 0; column < (number); column++) {
-//             if (column <= row) {
-//                 stair += '#';
-//             } else {
-//                 stair += ' ';
-//             };
-//         };
-//         console.log(`'${stair}'`);    
-//     };
-// };
+        for (let column = 0; column < number; column++) {
+            if (column <= row) {
+                stair += '#';
+            } else {
+                stair += ' ';
+            };
+        };
+        console.log(`'${stair}'`);    
+    };
+};
 
 // Recursive tips
 // function printNumber(number, decrement = 1) {
@@ -363,4 +363,29 @@ function steps(number, row = 0, stair = '') {
     // ternary expression way
     // const add = stair.length <= row ? '#' : ' ';
     // steps(number, row, stair + add);
+};
+
+
+
+
+
+// Two Sided Steps - Pyramids
+// --- Directions
+// Write a function that accepts a positive number N.
+// The function should console log a pyramid shape
+// with N levels using the # character.  Make sure the
+// pyramid has spaces on both the left *and* right hand sides
+// --- Examples
+//   pyramid(1)
+//       '#'
+//   pyramid(2)
+//       ' # '
+//       '###'
+//   pyramid(3)
+//       '  #  '
+//       ' ### '
+//       '#####'
+
+function pyramid(n) {
+
 };

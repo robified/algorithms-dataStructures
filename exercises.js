@@ -262,15 +262,15 @@ function cleanString(string) {
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 // Solution #1
-// function capitalize(string) {
-//     const words = [];
+function capitalize(string) {
+    const words = [];
 
-//     for (let word of string.split(' ')) {
-//         words.push(word[0].toUpperCase() + word.slice(1));
-//     };
+    for (let word of string.split(' ')) {
+        words.push(word[0].toUpperCase() + word.slice(1));
+    };
 
-//     return words.join(' ')
-// };
+    return words.join(' ')
+};
 
 // Solution #2
 function capitalize(string) {
@@ -311,7 +311,7 @@ function capitalize(string) {
 //       '### '
 //       '####'
 
-// Solution #1
+// Solution #1 - Iterative
 function steps(number) {
     for (let row = 0; row < number; row++) {
         let stair = '';
@@ -328,19 +328,18 @@ function steps(number) {
 };
 
 // Recursive tips
-// function printNumber(number, decrement = 1) {
-//     if (number === 0) {
-//         return;
-//     };
+function printNumber(number, decrement = 1) {
+    if (number === 0) {
+        return;
+    };
 
-//     console.log(number);
+    console.log(number);
 
-//     printNumber(number - decrement);
-// };
+    printNumber(number - decrement);
+};
+// printNumber(10); --> To test this function
 
-// printNumber(10);
-
-// Solution #2
+// Solution #2 - Recursive
 function steps(number, row = 0, stair = '') {
     // define the base case
     if (number === row) {
@@ -352,7 +351,7 @@ function steps(number, row = 0, stair = '') {
         return steps(number, row + 1);
     };
 
-    if (stair.length <= row) {
+    if (stair.length <= row) { // # alternative way with ternary expression
         stair += '#'; 
     } else {
         stair += ' ';
@@ -360,7 +359,7 @@ function steps(number, row = 0, stair = '') {
 
     steps(number, row, stair);
     
-    // ternary expression way
+    // # ternary expression way
     // const add = stair.length <= row ? '#' : ' ';
     // steps(number, row, stair + add);
 };
@@ -386,6 +385,21 @@ function steps(number, row = 0, stair = '') {
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {
+// Solution #1 - Iterative
+function pyramid(number) {
+    const midpoint = Math.floor((2 * number - 1) / 2);
+    
+    for (let row = 0; row < number; row++) {
+        let level = '';
+        
+        for (let column = 0; column < (2 * number - 1); column++) {
+            if (midpoint - row <= column && midpoint + row >= column) {
+                level += '#';
+            } else {
+                level += ' ';
+            };
+        };
 
+        console.log(level);
+    };
 };

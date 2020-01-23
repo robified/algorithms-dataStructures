@@ -9,7 +9,10 @@
 
 // Solution #1
 function reverse(string) {
-    return string.split('').reverse().join('')
+    return string
+        .split('')
+        .reverse()
+        .join('');
 };
 
 // Solution #2
@@ -20,12 +23,14 @@ function reverse(string) {
         reversed = character + reversed;
     };
 
-    return reversed
+    return reversed;
 };
 
 // Solution #3
 function reverse(string) {
-    return string.split('').reduce((reversed, character) => character + reversed, '')
+    return string
+        .split('')
+        .reduce((reversed, character) => character + reversed, '');
 };
 
 

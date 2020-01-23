@@ -226,18 +226,17 @@ function anagrams(stringA, stringB) {
     
     // Object.keys returns an array of keys of object
     if (Object.keys(aCharacterMap).length !== Object.keys(bCharacterMap).length) {
-        return false
+        return false;
     };
     
     for (let key in aCharacterMap) {
         if (aCharacterMap[key] !== bCharacterMap[key]) {
-            return false
+            return false;
         };
     };
 
-    return true
+    return true;
 };
-
 // helper function to build a character map
 function buildCharacterMap(string) {
     const characterMap = {};
@@ -246,17 +245,21 @@ function buildCharacterMap(string) {
         characterMap[character] = characterMap[character] + 1 || 1;
     };
 
-    return characterMap
+    return characterMap;
 };
 
 // Solution #2
 function anagrams(stringA, stringB) {
-    return cleanString(stringA) === cleanString(stringB)
+    return cleanString(stringA) === cleanString(stringB);
 };
-
 // helper function to clean up string and remove spaces & punctuations
 function cleanString(string) {
-    return string.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('')
+    return string
+                .replace(/[^\w]/g, '')
+                .toLowerCase()
+                .split('')
+                .sort()
+                .join('');
 };
 
 

@@ -418,3 +418,28 @@ function pyramid(number) {
     console.log(`'${level}'`);
     };
 };
+
+// Solution #2 - Recursive
+function pyramid(number, row = 0, level = '') {
+    // first base case for the row
+    if (row === number) return;
+    
+    // second base case for the column
+    if (level.length === (number * 2 - 1)) {
+        console.log(`'${level}'`);
+        // make the function call itself with an incremented row value
+        return pyramid(number, row + 1);
+    };
+    
+    // add conditional logic to increament level string value
+    const midpoint = Math.floor((number * 2 - 1) / 2);
+    
+    if (midpoint - row <= level.length && midpoint + row >= level.length) {
+        level += '#'
+    } else {
+        level += ' ';
+    };
+
+    // make the function call itself with incremented level string value
+    pyramid(number, row, level);
+};

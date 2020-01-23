@@ -49,12 +49,15 @@ function reverse(string) {
 
 // Solution #1
 function palindrome(string) {
-    return string === string.split('').reverse().join('')
+    const reversed = string.split('').reverse().join('');
+    
+    return string === reversed;
 };
 
 // Solution #2
 function palindrome(string) {
-    return string.split('').every((value, index) => value === string[string.length - index - 1])
+    return string.split('').every((value, index) => {
+        return value === string[string.length - index - 1]});
 };
 
 

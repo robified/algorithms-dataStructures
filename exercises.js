@@ -114,7 +114,7 @@ function maxChar(string) {
         };
     };
 
-    return maxValue
+    return maxValue;
 };
 
 

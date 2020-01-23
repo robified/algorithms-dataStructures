@@ -179,10 +179,10 @@ function chunk(array, size) {
         };
     };
 
-    return chunked
+    return chunked;
 };
 
-// // Solution #2
+// Solution #2
 function chunk(array, size) {
     const chunked = [];
         
@@ -190,7 +190,7 @@ function chunk(array, size) {
         chunked.push(array.slice(index, index + size));
     };
     
-    return chunked
+    return chunked;
 };
 
 // Solution #3
@@ -201,7 +201,7 @@ function chunk(array, size) {
         chunked.push(array.splice(0, size));
     };
 
-    return chunked
+    return chunked;
 };
 
 

@@ -402,11 +402,11 @@ function steps(number, row = 0, stair = '') {
 
 // Solution #1 - Iterative
 function pyramid(number) {
-    const midpoint = Math.floor((2 * number - 1) / 2);
-    
+    const midpoint = Math.floor((number * 2 - 1) / 2);
+
     for (let row = 0; row < number; row++) {
         let level = '';
-        
+
         for (let column = 0; column < (2 * number - 1); column++) {
             if (midpoint - row <= column && midpoint + row >= column) {
                 level += '#';
@@ -414,7 +414,7 @@ function pyramid(number) {
                 level += ' ';
             };
         };
-
-        console.log(level);
+    
+    console.log(`'${level}'`);
     };
 };

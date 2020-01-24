@@ -459,5 +459,19 @@ function pyramid(number, row = 0, level = '') {
 //   vowels('Why?') --> 0
 
 function vowels(string) {
+    let counter = 0;
+    const checker = ['a', 'e', 'i', 'o', 'u'];
 
+    for (let char of string.toLowerCase()) {
+        if (checker.includes(char)) {
+            counter++;
+        };
+    };
+
+    return counter;    
 };
+
+
+
+
+

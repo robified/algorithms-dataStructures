@@ -458,6 +458,7 @@ function pyramid(number, row = 0, level = '') {
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
+// Solution #1
 function vowels(string) {
     let counter = 0;
     const checker = ['a', 'e', 'i', 'o', 'u'];
@@ -471,7 +472,9 @@ function vowels(string) {
     return counter;    
 };
 
+// Solution #2
+function vowels(string) {
+    const matches = string.match(/[aeiou]/gi);
 
-
-
-
+    return matches ? matches.length : 0;
+};

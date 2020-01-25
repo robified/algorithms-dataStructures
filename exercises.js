@@ -570,3 +570,12 @@ function fib(number) {
 
     return result[number];
 };
+
+// Solution #2 - Recursive
+function fib(number) {
+    if (number < 2) {
+        return number;
+    };
+
+    return fib(number - 1) + fib(number - 2);
+};

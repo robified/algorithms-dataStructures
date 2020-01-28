@@ -799,3 +799,17 @@ class Queue {
         return record;
     }   
 }
+
+
+
+
+
+// --- Directions
+// Implement classes Node and Linked Lists
+// See 'directions' document
+
+class Node {
+    
+}
+
+class LinkedList {}

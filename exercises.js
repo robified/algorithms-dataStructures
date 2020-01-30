@@ -896,4 +896,22 @@ class LinkedList {
             this.head = new.Node(data);            
         }
     }
+    getAt(index) {
+        let counter = 0;
+        let node = this.head;
+        while (node) {
+            // if we found what we needed
+            if (counter === index) {
+                return node;
+            }
+
+            // if not, move on to the next node
+            counter++;
+            node = node.next;
+
+            // we reached the end
+        }
+        
+        return null;
+    }
 }

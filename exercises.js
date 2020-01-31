@@ -1008,6 +1008,7 @@ function midpoint(list) {
 
 
 
+// Circular Lists?
 // --- Directions
 // Given a linked list, return true if the list
 // is circular, false if it is not.
@@ -1023,5 +1024,19 @@ function midpoint(list) {
 //   circular(l) // true
 
 function circular(list) {
-    
+    // we could do list.head, but you know
+    slow = list.getFirst();
+    fast = list.getFirst();
+
+    while (fast.next && fast.next.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+        
+        if (slow === fast) {
+            return true;
+        }
+    }
+
+    // if we exit the while loop, that means there's no loop
+    return false;
 }
